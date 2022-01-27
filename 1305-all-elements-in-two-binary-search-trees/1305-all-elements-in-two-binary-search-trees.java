@@ -50,44 +50,26 @@ class Solution {
     
     private void mergeList(List<Integer> a, List<Integer> b, List<Integer> ans){
         
-//         int i=0;
-//         int j=0;
+        int i=0;
+        int j=0;
         
-//         while(i<a.size() && j<b.size()){
+        while(i<a.size() && j<b.size()){
             
-//             if(a.get(i)<=b.get(j) && a.get(i)!=null && b.get(i)!=null){
-//                 ans.add(a.get(i++));
-//             }else{
-//                 ans.add(b.get(j++));
-//             }
-//         }
-        
-//         while(i<a.size()){
-//             ans.add(a.get(i++));
-//         }
-        
-//         while(j<b.size()){
-//             ans.add(b.get(j++));
-//         }
-        
-        int p = 0, q = 0;
-        while(p < a.size() && q < b.size()) {
-            if(a.get(p) < b.get(q)) {
-                ans.add(a.get(p));
-                p++;
-            } else {
-                ans.add(b.get(q));
-                q++;
+            if(a.get(i)<b.get(j)){
+                ans.add(a.get(i++));
+            }else{
+                ans.add(b.get(j++));
             }
         }
         
-        while(p<a.size()) {
-            ans.add(a.get(p++));
+        while(i<a.size()){
+            ans.add(a.get(i++));
         }
         
-        while(q<b.size()) {
-            ans.add(b.get(q++));
+        while(j<b.size()){
+            ans.add(b.get(j++));
         }
+        
         
     }
     
