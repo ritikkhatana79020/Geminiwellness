@@ -7,7 +7,7 @@ class Solution {
             
             char top = s.charAt(i); 
             
-            if(!stk.isEmpty() && stk.peek() == s.charAt(i)){
+            if(!stk.isEmpty() && stk.peek() == top){
                 stk.pop();
             }else{
                 stk.push(s.charAt(i));
