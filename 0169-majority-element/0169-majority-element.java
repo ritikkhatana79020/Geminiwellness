@@ -1,20 +1,25 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        int count=0;
-        int element=0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int n = nums.length;
 
-        for(int i=0;i<nums.length;i++){
-            if(count==0){
-                element=nums[i];
-            }
+        for(int i=0;i<n;i++){
 
-            if(element == nums[i]){
-                count++;
+
+            //Insert into Map by checking a condition
+            if(map.containsKey(nums[i])){
+                int value = map.get(nums[i])+1;
+                map.put(nums[i],value);
             }else{
-                count--;
+                map.put(nums[i],1);
             }
-        }
 
-        return element;
+            //Now checking value(count) of each key in the map and if it is  greater than n/2 then simply return it
+            if(map.get(nums[i])>n/2){
+                return nums[i];
+            }
+
+        }
+        return -1;
     }
 }
