@@ -1,11 +1,16 @@
 class Solution {
     public int firstUniqChar(String s) {
-        char[] a = s.toCharArray();
-  
-        for(int i=0; i<a.length;i++){
-        if(s.indexOf(a[i])==s.lastIndexOf(a[i])){return i;}
+        HashMap<Character,Integer> map = new HashMap<>();
+
+        for(char c : s.toCharArray()){
+            map.put(c,map.getOrDefault(c,0)+1);
+        }
+
+        for(int i=0;i<s.length();i++){
+            if(map.containsKey(s.charAt(i)) && map.get(s.charAt(i))==1){
+                return i;
+            }
         }
         return -1;
-
     }
 }
