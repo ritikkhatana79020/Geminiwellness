@@ -22,3 +22,8 @@ class Solution {
         return ans;
     }
 }
+
+// nums    [1,2,3,4]
+// left    [1 , 1, 2, 6]
+// right   [24, 12,4, 1]
+// multi   [24, 12,8, 6]
