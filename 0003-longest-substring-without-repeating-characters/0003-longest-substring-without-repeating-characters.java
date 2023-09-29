@@ -1,8 +1,10 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        int left = 0;
+        int left =0;
         int right = 0;
-        int longestSubString  = 0;
+
+        int len=0;
+
         HashSet<Character> set = new HashSet<>();
 
         while(right<s.length()){
@@ -12,9 +14,10 @@ class Solution {
             }else{
                 set.add(s.charAt(right));
                 right++;
-                longestSubString  = Math.max(longestSubString ,set.size());
+                len = Math.max(len,set.size());
             }
         }
-        return longestSubString ;
+
+        return len;
     }
 }
