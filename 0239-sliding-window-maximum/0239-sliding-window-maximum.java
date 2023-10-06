@@ -8,7 +8,7 @@ class Solution {
         while(j<N){
             //calculations
             while(dq.size()>0 && dq.peekLast()<nums[j]) {
-                dq.removeLast();//just pop
+                dq.removeLast();
             }
             dq.add(nums[j]);
 
@@ -28,3 +28,10 @@ class Solution {
         return ans;
     }
 }
+//       i
+// [5,3,4,2,1]     k = 3
+//            j   
+// ---------------
+//  2 | 1
+// ---------------
+// ans = {5,4,4}
